@@ -1,0 +1,23 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  r-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::dplyr
+            any::readr
+      - run: Rscript tests/test_preprocessing.R
+      - run: Rscript Step1_Filter_Impute_Log2_V3.R --input examples/synthetic_input.csv --output-dir build/01_transform
+      - run: Rscript 02_normalize/Step2_Normalization_V5.R --input build/01_transform/01C_log2_transformed_V5.csv --output-dir build/02_normalize
