@@ -1,0 +1,6 @@
+PG.ProteinAccessions,PG.Genes,PG.Quantity,PG.IsSingleHit,PG.NrOfStrippedSequencesIdentified,PG.RunEvidenceCount,R.FileName
+P1,GENE1,100,FALSE,2,2,S1
+P2,GENE2,0,FALSE,2,2,S1
+P3,GENE3,,FALSE,2,2,S2
+P4,GENE4,16,FALSE,3,3,S2
+P5,GENE5,8,TRUE,1,1,S2

@@ -1,0 +1,9 @@
+Package: diaProteomicsPreprocessing
+Type: Project
+Title: DIA Proteomics Preprocessing Workflow
+Version: 0.1.0
+Description: Filtering, log2 transformation, and per-sample median centering for long-format DIA proteomics reports.
+Encoding: UTF-8
+Imports:
+    dplyr,
+    readr
